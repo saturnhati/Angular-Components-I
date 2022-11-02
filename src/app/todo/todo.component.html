@@ -1,1 +1,41 @@
-<p>todo works!</p>
+<app-header></app-header>
+<div class="container my-3">
+  <h1 class="text-center">ToDo List</h1>
+  <div class="container d-flex justify-content-center">
+    <input class="w-75" type="text" placeholder="Cosa devi fare?" />
+    <button type="button" class="btn btn-info btn-sm mx-2">INVIO</button>
+  </div>
+  <div class="container my-3">
+    <h3>Your Tasks</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Task</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos">
+          <th scope="row">{{ todo.id }}</th>
+          <td [ngStyle]="currentStyles">{{ todo.content }}</td>
+          <td>
+            <button
+              class="btn btn-sm btn-danger mx-1"
+              (click)="removeTodo(todo)"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            <button
+              class="btn btn-sm btn-warning mx-1"
+              (click)="checkedTodo(todo)"
+            >
+              <i class="fa-regular fa-square-check"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>

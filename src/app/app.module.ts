@@ -7,6 +7,27 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TodoComponent } from './todo/todo.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
+    component: LoginComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
+  },
+  {
+    path: 'todo',
+    component: TodoComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -17,7 +38,7 @@ import { TodoComponent } from './todo/todo.component';
     RegistrationComponent,
     TodoComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })

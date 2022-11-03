@@ -1,10 +1,10 @@
 export class ToDo {
   id: number;
   content: string;
-  // isChecked: boolean;
-  constructor(id: number, content: string, isChecked: boolean) {
+  check: string;
+  constructor(id: number, content: string, check: string) {
     this.id = id;
     this.content = content;
-    // this.isChecked = isChecked;
+    this.check = check;
   }
 }

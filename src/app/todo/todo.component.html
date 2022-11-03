@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="container my-3">
   <h1 class="text-center">ToDo List</h1>
   <div class="container d-flex justify-content-center">
@@ -16,9 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let todo of todos">
+        <tr *ngFor="let todo of todos; let i = index">
           <th scope="row">{{ todo.id }}</th>
-          <td [ngStyle]="currentStyles">{{ todo.content }}</td>
+          <td ngClass="{{ todo.check }}">{{ todo.content }}</td>
           <td>
             <button
               class="btn btn-sm btn-danger mx-1"
@@ -26,10 +25,7 @@
             >
               <i class="fa-solid fa-trash"></i>
             </button>
-            <button
-              class="btn btn-sm btn-warning mx-1"
-              (click)="checkedTodo(todo)"
-            >
+            <button class="btn btn-sm btn-success mx-1" (click)="checkTodo(i)">
               <i class="fa-regular fa-square-check"></i>
             </button>
           </td>
@@ -38,4 +34,3 @@
     </table>
   </div>
 </div>
-<app-footer></app-footer>

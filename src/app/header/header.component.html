@@ -15,15 +15,28 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../login"
+          <a
+            class="nav-link"
+            [routerLink]="['home']"
+            routerLinkActive="router-link-active"
             >Login</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../registration">Registration</a>
+          <a
+            class="nav-link"
+            [routerLink]="['registration']"
+            routerLinkActive="router-link-active"
+            >Registration</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../todo">To-Do</a>
+          <a
+            class="nav-link"
+            [routerLink]="['todo']"
+            routerLinkActive="router-link-active"
+            >To-Do</a
+          >
         </li>
       </ul>
     </div>

@@ -11,32 +11,32 @@ export class TodoComponent implements OnInit {
     {
       id: 1,
       content: 'Annaffiare le piante',
-      //isChecked: false,
+      check: '',
     },
     {
       id: 2,
       content: 'Bere acqua',
-      //isChecked: false,
+      check: '',
     },
     {
       id: 3,
       content: 'Dar da mangiare al gatto',
-      //isChecked: false,
+      check: '',
     },
     {
       id: 4,
       content: 'Rifare il letto',
-      //isChecked: false,
+      check: '',
     },
     {
       id: 5,
       content: 'Fare la lavatrice',
-      //isChecked: false,
+      check: '',
     },
     {
       id: 6,
       content: 'Stendere i panni',
-      //isChecked: false,
+      check: '',
     },
   ];
 
@@ -44,20 +44,12 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  isChecked = false;
+  miaClasse = 'unchecked';
 
   currentStyles: Record<string, string> = {};
 
-  setCurrentStyles() {
-    this.currentStyles = {
-      'text-decoration': this.isChecked ? 'line-through' : 'none',
-      color: this.isChecked ? 'lightgray' : 'black',
-    };
-  }
-
-  checkedTodo(obj: ToDo) {
-    this.isChecked = !this.isChecked;
-    this.setCurrentStyles();
+  checkTodo(i: number) {
+    this.todos[i].check = this.todos[i].check === 'check' ? '' : 'check';
   }
 
   removeTodo(obj: ToDo) {

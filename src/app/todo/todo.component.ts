@@ -9,36 +9,32 @@ import { ToDo } from '../classes/to-do';
 export class TodoComponent implements OnInit {
   todos: ToDo[] = [
     {
-      id: 1,
       content: 'Annaffiare le piante',
       check: '',
     },
     {
-      id: 2,
       content: 'Bere acqua',
       check: '',
     },
     {
-      id: 3,
       content: 'Dar da mangiare al gatto',
       check: '',
     },
     {
-      id: 4,
       content: 'Rifare il letto',
       check: '',
     },
     {
-      id: 5,
       content: 'Fare la lavatrice',
       check: '',
     },
     {
-      id: 6,
       content: 'Stendere i panni',
       check: '',
     },
   ];
+
+  txt: string = '';
 
   constructor() {}
 
@@ -47,6 +43,12 @@ export class TodoComponent implements OnInit {
   miaClasse = 'unchecked';
 
   currentStyles: Record<string, string> = {};
+
+  addTxt() {
+    let obj = new ToDo(this.txt, '');
+    this.todos.push(obj);
+    this.txt = '';
+  }
 
   checkTodo(i: number) {
     this.todos[i].check = this.todos[i].check === 'check' ? '' : 'check';

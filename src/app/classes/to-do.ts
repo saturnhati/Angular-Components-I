@@ -1,9 +1,7 @@
 export class ToDo {
-  id: number;
   content: string;
   check: string;
-  constructor(id: number, content: string, check: string) {
-    this.id = id;
+  constructor(content: string, check: string) {
     this.content = content;
     this.check = check;
   }
